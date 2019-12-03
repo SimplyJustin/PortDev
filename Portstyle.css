@@ -15,6 +15,9 @@ header{
     background-color: transparent;
     color: white;
 }
+.logo {
+    margin: 40px 0 0 15px;
+}
 .title{
     text-align: center;
     position: relative;
@@ -48,7 +51,7 @@ header{
     background-color: white;
     color: black;
 }
-.toggle-button{
+.hamburger{
     position: absolute;
     top: .75rem;
     right: 1rem;
@@ -58,7 +61,7 @@ header{
     width: 30px;
     height: 20px;
 }
-.toggle-button .bar{
+.hamburger .bar{
     height: 3px;
     width: 100%;
     background-color: white;
@@ -121,17 +124,20 @@ header{
     text-align: center;
     padding: 25px 0px;
 }
-#myAbout{
+#myContent{
     text-align: center;
-    padding: 0px 30px; 
+    padding: 0px 1px; 
 }
 .container-4{
     width: 110px;
-    height: 120px;
+    height: 110px;
     margin: 100px auto;
 }
-.container-4 p{
-    font-size: 20px;
+.container-4 h2{
+    position: relative;
+    top: -50px;
+    right: 25px;
+    white-space: nowrap;
 }
 .circle{
     height: 100px;
@@ -165,25 +171,45 @@ footer{
 }
 
 @media (max-width: 600px) {
-    .toggle-button{
+    .hamburger{
         display: flex;
+        position: absolute;
     }
-    .navbar-links{
-        display: none;
+    .hamburger.active{
+        transform: rotate(90deg);
+    }
+    .hamburger.active .bar{
+        background-color: black;
     }
     .navbar {
         flex-direction: column;
         align-items: flex-start;
     }
-    .navbar-links ul{
-        width: 100%;
-        flex-direction: column;
+    .logo {
+        margin: 15px 0 0 15px;
     }
-    .navbar-links li{
+    .navbar-links{
+        display: none;
+    }
+    .navbar-links ul{
         text-align: center;
     }
-    .navbar-links li a{
-        padding: .5rem 1rem;
+    .navbar-links ul li{
+        width: 100%;
+    }
+    .navbar-links ul li a{
+        display: block;
+        top:50px;
+        text-align: center;
+        padding: 10px 120px;
+        margin: 0;
+        background-color: white;
+        color: black;
+        border: 1px solid black
+    }
+    .navbar-links ul li a:hover{
+        background-color: black;
+        color: white;
     }
     .navbar-links.active {
         display: flex;
@@ -197,8 +223,44 @@ footer{
     }
     .container-2{
         flex-direction: column;
+        padding-bottom: 20%;
+        height: 100%;
+    }
+    .container-2 img{
+        position: relative;
+        top: 70px;
+        left: 25%;
+    }
+    .container-2 h2{
+        position: relative;
+        right: 120px;
+    }
+    .container-2 p{
+        clear: both;
+        position: relative;
+        top: 95px;
+        padding: 50px 0;
     }
     .container-3{
         flex-direction: column;
+        padding-bottom: .2%;
+        height: 380px;
+    }
+    .container-3 img{
+        position: relative;
+        top: 70px;
+        right: 25%;
+    }
+    .container-3 h2{
+        position: relative; 
+        left: 120px;
+    }
+    .container-3 p{
+        position: relative;
+        clear: right;
+        top: 100px;
+    }
+    .container-4 h2{
+        right: 30px;
     }
 }
